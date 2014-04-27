@@ -26,7 +26,7 @@ $(call inherit-product-if-exists, vendor/google/gapps_armv6_tiny.mk)
 PRODUCT_DEVICE := icong
 PRODUCT_NAME := full_icong
 PRODUCT_BRAND := htc_europe
-PRODUCT_MODEL := Wildfire S A510e
+PRODUCT_MODEL := Salsa C510e
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_CHARACTERISTICS := phone
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_icong
