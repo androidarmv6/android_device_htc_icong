@@ -1,4 +1,4 @@
-# marvel.mk
+# icong.mk
 # Device configuration file. 
 # Re-written by Benjamin Gwynn
 
@@ -7,11 +7,11 @@
 # Copyright (C) 2011 The CyanogenMod Project
 # Copyright (C) 2014 Benjamin Gwynn <http://xenxier.tk>
 
-LOCAL_DIR := device/htc/marvel
+LOCAL_DIR := device/htc/icong
 LOCAL_PATH := $(LOCAL_DIR)
 
 ## Call vendors:
-$(call inherit-product, vendor/htc/marvel/marvel-vendor.mk)		# Include marvel vendor
+$(call inherit-product, vendor/htc/icong/icong-vendor.mk)		# Include icong vendor
 
 # Permissions
 ## Copy the following permission files for our hardware.
@@ -29,11 +29,11 @@ PRODUCT_COPY_FILES += \
 # Copy low-level system files
 ## Init
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/ramdisk/fstab.marvel:root/fstab.marvel \
-    $(LOCAL_PATH)/config/ramdisk/init.marvel.rc:root/init.marvel.rc \
-    $(LOCAL_PATH)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.bluez.rc \
-    $(LOCAL_PATH)/config/ramdisk/init.marvel.usb.rc:root/init.marvel.usb.rc \
-    $(LOCAL_PATH)/config/ramdisk/ueventd.marvel.rc:root/ueventd.marvel.rc
+    $(LOCAL_PATH)/config/ramdisk/fstab.icong:root/fstab.icong \
+    $(LOCAL_PATH)/config/ramdisk/init.icong.rc:root/init.icong.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.icong.usb.rc:root/init.icong.bluez.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.icong.usb.rc:root/init.icong.usb.rc \
+    $(LOCAL_PATH)/config/ramdisk/ueventd.icong.rc:root/ueventd.icong.rc
 	
 ## Firmware Files
 PRODUCT_COPY_FILES += \
@@ -57,10 +57,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
     $(LOCAL_DIR)/config/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
 
+## Dirty fix for wifi
+PRODUCT_COPY_FILES += \
+    device/htc/icong/prebuilt/bcm4329.ko:system/lib/modules/bcm4329.ko
+
 ## Keylayout configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/config/key/marvel-keypad.kl:system/usr/keylayout/marvel-keypad.kl \
-    $(LOCAL_DIR)/config/key/marvel-keypad.kcm.bin:system/usr/keychars/marvel-keypad.kcm.bin \
+    $(LOCAL_DIR)/config/key/icong-keypad.kl:system/usr/keylayout/icong-keypad.kl \
+    $(LOCAL_DIR)/config/key/icong-keypad.kcm.bin:system/usr/keychars/icong-keypad.kcm.bin \
     $(LOCAL_DIR)/config/key/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     $(LOCAL_DIR)/config/key/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
 

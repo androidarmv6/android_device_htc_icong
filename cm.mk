@@ -5,7 +5,7 @@
 # Re-written by Benjamin Gwynn
 
 # Call our device's AOSP device config.
-$(call inherit-product, device/htc/marvel/full_marvel.mk)
+$(call inherit-product, device/htc/icong/full_icong.mk)
 
 # Inherit common CM stuff
 $(call inherit-product, vendor/cm/config/gsm.mk)
@@ -16,8 +16,8 @@ TARGET_SCREEN_HEIGHT := 480
 TARGET_SCREEN_WIDTH := 320
 
 # Overrides for CM
-PRODUCT_NAME := cm_marvel
-PRODUCT_DEVICE := marvel
+PRODUCT_NAME := cm_icong
+PRODUCT_DEVICE := icong
 
 ## Assign the build fingerprint to the build.prop file.
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_marvel/marvel:4.3.1/$(BUILD_ID)/v0.1:user/test-keys
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=cyanogenmod/htc_icong/icong:4.3.1/$(BUILD_ID)/v0.1:user/test-keys

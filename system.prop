@@ -1,6 +1,8 @@
-# system.prop for marvel
-
+#
+# system.prop for icong
+#
 # htc ril
+#
 ro.phone.min_match.HTC__016=7
 ro.ril.ecc.HTC-GCC=999,112,997
 ro.ril.ecc.HTC-WWE=999
@@ -30,7 +32,7 @@ mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=180
 
-ro.sf.lcd_density=160
+ro.sf.lcd_density=150
 video.accelerate.hw=1
 debug.sf.no_hw_vsync=1
 debug.composition.type=gpu
@@ -38,7 +40,6 @@ persist.sys.use_dithering=0
 persist.sys.purgeable_assets=1
 debug.sf.hw=1
 debug.gr.numframebuffers=2
-persist.sys.prefer_16bpp=1
 #com.qc.hdmi_out=false
 
 #settings.display.autobacklight=1
@@ -55,13 +56,14 @@ ro.setupwizard.enable_bypass=1
 
 # Dalvik
 dalvik.vm.lockprof.threshold=500
-dalvik.vm.checkjni=0
-dalvik.vm.dexopt-data-only=1
-dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
+dalvik.vm.dexopt-flags=m=y
 dalvik.vm.heapstartsize=5m
 dalvik.vm.heapgrowthlimit=24m
 dalvik.vm.heapsize=64m
+dalvik.vm.verify_bytecode=false
 dalvik.vm.execution-mode=int:fast
+dalvik.vm.checkjni=0
+dalvik.vm.dexopt-data-only=1
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1
@@ -72,9 +74,8 @@ ro.ril.avoid.pdp.overlap = 1
 # update the acoustic table for Buzz NEL lab testing
 ro.ril.update.acoustic.table = 1
 
+###################
 # USB
+###################
 persist.sys.usb.config=mass_storage,adb
 persist.service.adb.enable=1
-
-# Lockscreen
-ro.hwaccel.lockscreen=0

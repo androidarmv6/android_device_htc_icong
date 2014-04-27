@@ -18,15 +18,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Call our device's makefile.
-$(call inherit-product, device/htc/marvel/marvel.mk)
+$(call inherit-product, device/htc/icong/icong.mk)
 
 # Install Google Apps if available
 $(call inherit-product-if-exists, vendor/google/gapps_armv6_tiny.mk)
 
-PRODUCT_DEVICE := marvel
-PRODUCT_NAME := full_marvel
+PRODUCT_DEVICE := icong
+PRODUCT_NAME := full_icong
 PRODUCT_BRAND := htc_europe
 PRODUCT_MODEL := Wildfire S A510e
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_CHARACTERISTICS := phone
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_marvel
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_icong

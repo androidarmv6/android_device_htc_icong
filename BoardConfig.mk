@@ -19,9 +19,9 @@ $(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/)
 
 -include device/qcom/msm7x27/BoardConfigCommon.mk
 
-TARGET_DEVICE := marvel
-TARGET_BOOTLOADER_BOARD_NAME := marvel
-TARGET_SPECIFIC_HEADER_PATH := device/htc/marvel/include
+TARGET_DEVICE := icong
+TARGET_BOOTLOADER_BOARD_NAME := icong
+TARGET_SPECIFIC_HEADER_PATH := device/htc/icong/include
 
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
@@ -31,16 +31,16 @@ TARGET_PROVIDES_LIBAUDIO := true
 
 ### Kernel
 TARGET_KERNEL_SOURCE := kernel/htc/msm7227
-TARGET_KERNEL_CONFIG := marvel_defconfig
+TARGET_KERNEL_CONFIG := icong_defconfig
 
 ### Kernel related stuff
-BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=marvel 
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=icong 
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
 
 # Releasetools
-#TARGET_OTA_EXTRAS_FILE := device/htc/marvel/releasetools/extras.txt
-TARGET_OTA_ASSERT_DEVICE := marvel
+#TARGET_OTA_EXTRAS_FILE := device/htc/icong/releasetools/extras.txt
+TARGET_OTA_ASSERT_DEVICE := icong
 
 ### USB Mass Storage
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
@@ -86,13 +86,13 @@ COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
 
 ### Recovery
 
--include device/htc/marvel/config/recovery/BoardConfigCommon.mk
+-include device/htc/icong/config/recovery/BoardConfigCommon.mk
 #BOARD_USES_RECOVERY_CHARGEMODE := true
-BOARD_CUSTOM_GRAPHICS := ../../../device/htc/marvel/config/recovery/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/htc/icong/config/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_FSTAB := device/htc/marvel/config/ramdisk/fstab.marvel
+TARGET_RECOVERY_FSTAB := device/htc/icong/config/ramdisk/fstab.icong
 
 ### Audio
 BOARD_USES_GENERIC_AUDIO := false
@@ -114,8 +114,8 @@ BOARD_VENDOR_COMPASS_HARDWARE := akm8975
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 #BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/marvel/bluetooth/include
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/marvel/bluetooth/vnd_msm7x27.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/icong/bluetooth/include
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/icong/bluetooth/vnd_msm7x27.txt
 
 ### FM radio
 BOARD_HAVE_FM_RADIO := true
@@ -134,7 +134,7 @@ BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
 BOARD_USE_QCOM_PMEM := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := marvel
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := icong
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 20000
 
 ### RIL
