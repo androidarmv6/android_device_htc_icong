@@ -1,4 +1,4 @@
-Device configuration for the HTC Wildfire S A510e (marvel).
+Device configuration for the HTC Salsa C510e (icong).
 
   - Copyright (C) 2011 The CyanogenMod Project
   - Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
