@@ -20,9 +20,6 @@
 TARGET_DEVICE := icong
 TARGET_BOOTLOADER_BOARD_NAME := icong
 
-TARGET_PROVIDES_LIBLIGHTS := true
-TARGET_PROVIDES_LIBAUDIO := true
-
 ### Kernel
 TARGET_KERNEL_CONFIG := icong_defconfig
 
@@ -34,9 +31,6 @@ BOARD_KERNEL_PAGESIZE := 2048
 # Releasetools
 #TARGET_OTA_EXTRAS_FILE := device/htc/icong/releasetools/extras.txt
 TARGET_OTA_ASSERT_DEVICE := icong
-
-### USB Mass Storage
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 ### Recovery
 TARGET_RECOVERY_FSTAB := device/htc/icong/config/ramdisk/fstab.icong
