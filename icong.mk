@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ramdisk/fstab.icong:root/fstab.icong \
     $(LOCAL_PATH)/config/ramdisk/init.icong.rc:root/init.icong.rc \
-    $(LOCAL_PATH)/config/ramdisk/init.icong.usb.rc:root/init.icong.bluez.rc \
+    $(LOCAL_PATH)/config/ramdisk/init.icong.bluez.rc:root/init.icong.bluez.rc \
     $(LOCAL_PATH)/config/ramdisk/ueventd.icong.rc:root/ueventd.icong.rc
 
 ## Replacement binaries (fix for akmd)
