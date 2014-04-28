@@ -197,4 +197,9 @@ should be empty. -->
         <!-- The Google Network Location Services location provider -->
         <item>com.google.android.location</item>
     </string-array>
+
+    <!-- Device supports LED flashlight -->
+    <bool name="config_enableTorch">true</bool>
+
+
 </resources>
