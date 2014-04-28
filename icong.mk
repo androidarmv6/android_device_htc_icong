@@ -16,15 +16,8 @@ $(call inherit-product, vendor/htc/icong/icong-vendor.mk)		# Include icong vendo
 # Permissions
 ## Copy the following permission files for our hardware.
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # Copy low-level system files
 ## Init
@@ -32,26 +25,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ramdisk/fstab.icong:root/fstab.icong \
     $(LOCAL_PATH)/config/ramdisk/init.icong.rc:root/init.icong.rc \
     $(LOCAL_PATH)/config/ramdisk/init.icong.usb.rc:root/init.icong.bluez.rc \
-    $(LOCAL_PATH)/config/ramdisk/init.icong.usb.rc:root/init.icong.usb.rc \
     $(LOCAL_PATH)/config/ramdisk/ueventd.icong.rc:root/ueventd.icong.rc
-	
-## Firmware Files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/config/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    $(LOCAL_DIR)/config/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    $(LOCAL_DIR)/config/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
 ## Replacement binaries (fix for akmd)
 #PRODUCT_COPY_FILES += \
 #    $(LOCAL_DIR)/config/bin/linker:system/bin/linker
 
 # Copy configurations 
-## Media profiles
-PRODUCT_COPY_FILES += \
-    $(LOCAL_DIR)/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_DIR)/config/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_DIR)/config/media_profiles.xml:system/etc/media_profiles.xml
-
 ## Touchscreen Configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc \
@@ -69,48 +49,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/key/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
 
 # Install hardware packages
-## Audio
-PRODUCT_PACKAGES += \
-    audio_policy.msm7x27 \
-    audio.primary.msm7x27 \
-    libtinyalsa
-
 ## Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm7x27 \
-    lights.msm7x27
-
-## Camera
-#PRODUCT_PACKAGES += \
-#    camera.msm7x27 \
-#    libcamera
+    sensors.msm7x27
 
 ## GPS
 PRODUCT_PACKAGES += \
     gps.msm7x27 \
     librpc
 
-## WiFi
-PRODUCT_PACKAGES += \
-    brcm_patchram_plus
-
-## USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
-## Radio
-PRODUCT_PACKAGES += \
-    rild
-
-## Filesystem
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs
-
 # Install software application packages
 ## Marvel-supported packages
 PRODUCT_PACKAGES += \
-    Superuser \
     Torch
 
 ## Additonal packages
@@ -131,19 +81,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.phone_storage=0
 
-## Disable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
-
-# Inherit qcom/msm7x27
-$(call inherit-product, device/qcom/msm7x27/msm7x27.mk)
-
-# Additional properties
-## Application artwork
-PRODUCT_LOCALES += mdpi
-PRODUCT_AAPT_CONFIG := normal mdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-$(call inherit-product, device/mdpi-common/mdpi.mk)
-
 # Device overlays
 ## Tell the compiler to use overlays found in the following folder:
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_DIR)/overlay
+
+# inherit from msm7x27-common
+$(call inherit-product, device/htc/msm7x27-common/msm7x27.mk)
