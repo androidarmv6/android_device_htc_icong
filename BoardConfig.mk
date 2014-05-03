@@ -30,7 +30,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 # Releasetools
 #TARGET_OTA_EXTRAS_FILE := device/htc/icong/releasetools/extras.txt
-TARGET_OTA_ASSERT_DEVICE := icong
+TARGET_OTA_ASSERT_DEVICE := icong,icong_g,marvel,icon
 
 ### Recovery
 TARGET_RECOVERY_FSTAB := device/htc/icong/config/ramdisk/fstab.icong
