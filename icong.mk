@@ -11,8 +11,7 @@ LOCAL_DIR := device/htc/icong
 LOCAL_PATH := $(LOCAL_DIR)
 
 ## Call vendors:
-$(call inherit-product, vendor/htc/icong/icong-vendor.mk)
-$(call inherit-product, vendor/htc/msm7x27-common/vendor.mk)
+$(call inherit-product, vendor/htc/icong/icong-vendor.mk)		# Include icong vendor
 
 # Permissions
 ## Copy the following permission files for our hardware.
