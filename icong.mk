@@ -38,8 +38,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_DIR)/config/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
 
 ## Dirty fix for wifi
-PRODUCT_COPY_FILES += \
-    device/htc/icong/prebuilt/bcm4329.ko:system/lib/modules/bcm4329.ko
+#PRODUCT_COPY_FILES += \
+#    device/htc/icong/prebuilt/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 ## Keylayout configuration
 PRODUCT_COPY_FILES += \
