@@ -21,9 +21,8 @@ TARGET_DEVICE := icong
 TARGET_BOOTLOADER_BOARD_NAME := icong
 
 ### Kernel
-TARGET_KERNEL_CONFIG := icong_defconfig
+TARGET_KERNEL_CONFIG := chacha-icong_defconfig
 
-### Kernel related stuff
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=icong 
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
