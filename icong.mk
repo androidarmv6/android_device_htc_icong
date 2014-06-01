@@ -56,7 +56,7 @@ PRODUCT_PACKAGES += \
 
 ## GPS
 PRODUCT_PACKAGES += \
-    gps.msm7x27 \
+    gps.icong \
     librpc
 
 # Install software application packages
