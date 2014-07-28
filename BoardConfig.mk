@@ -21,8 +21,11 @@ TARGET_DEVICE := icong
 TARGET_BOOTLOADER_BOARD_NAME := icong
 
 ### Kernel
+ifneq (eng,$(TARGET_BUILD_VARIANT))
 TARGET_KERNEL_CONFIG := icong_defconfig
-
+else
+TARGET_KERNEL_CONFIG := htc_msm7227_recovery_defconfig
+endif
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null androidboot.hardware=icong 
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_KERNEL_PAGESIZE := 2048
