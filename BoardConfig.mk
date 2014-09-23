@@ -49,3 +49,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/icong/bluetooth/includ
 
 ### GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := icong
+
+### Recovery
+DEVICE_RESOLUTION := 320x480
